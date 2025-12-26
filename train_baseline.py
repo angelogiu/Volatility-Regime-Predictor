@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
 
 df = pd.read_csv("data/processed/SPY.csv")
 df = df.dropna()
