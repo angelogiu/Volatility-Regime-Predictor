@@ -15,6 +15,8 @@ df['vol_20'] = df['returns'].rolling(20).std()
 df['threshold'] = df['abs_returns'].rolling(60).quantile(0.75)
 df['abs_ret_next'] = df['abs_returns'].shift(-1)
 df['target'] = (df['abs_ret_next'] > df['threshold']).astype(int)
+df["vol_60"] = df["returns"].rolling(60).std()
+df["vol_ratio"] = df["vol_20"] / df["vol_60"]
 
 del df['Close']
 del df['Open']

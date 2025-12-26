@@ -4,6 +4,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
 
 import pandas as pd
+import joblib
 
 df = pd.read_csv("data/processed/SPY.csv")
 df = df.sort_index()
@@ -35,6 +36,16 @@ print("Accuracy:", accuracy_score(Y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(Y_test, y_pred))
 print(classification_report(Y_test, y_pred, digits=4))
 print("ROC-AUC:", roc_auc_score(Y_test, y_proba))
+
+
+joblib.dump(pipe, "models/lr_vol_model.pkl")
+
+
+joblib.dump(list(X_train.columns), "models/feature_columns.pkl")
+
+print("Saved: models/lr_vol_model.pkl")
+print("Saved: models/feature_columns.pkl")
+
 
 
 
