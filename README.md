@@ -97,7 +97,7 @@ This project builds a daily volatility-regime dataset for SPY, trains a logistic
 
 All commands should be run from the project root directory.
 
-First, create and activate a virtual environment (recommended) and install dependencies:
+First, create and activate a virtual environment and install dependencies:
 
 ```bash
 python -m venv .venv
